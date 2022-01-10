@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head">
+</head>
+<body>
+<div class="container">
+
+    <div id="top" th:include="template :: masthead"></div>
+
+    <div id="middle">
+
+        <!-- TODO - Display portfolio -->
+
+        <p>Portfolioooo!</p>
+
+        <table border="1" cellpadding="10" align="center">
+            <thead>
+            <tr>
+                <th>Owner ID</th><th>Shares_Owned</th><th>Symbol</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stock : ${listOfShares}">
+                <td th:text="${stock.ownerId}">Owner ID</td>
+                <td th:text="${stock.sharesOwned}">Shares_Owned</td>
+                <td th:text="${stock.symbol}">Symbol</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:replace="template :: footer"></div>
+</div>
+</body>
+</html>
